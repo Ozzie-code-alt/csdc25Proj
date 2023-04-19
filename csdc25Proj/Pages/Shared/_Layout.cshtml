@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -10,46 +11,172 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 container rounded" style="background-color: #FFD700;">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">CSDC 25 - PROJECT</a>
+                <a class="navbar-brand" href="/Index" >
+                    <img asp-page="/Index" src="/css/goldenlion.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" /> <!-- Dont forget to fix this -->
+                   GJLC
+                </a>
+    
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                        aria-expanded="false" aria-label="Toggle navigation" style="color:darkred" >
+                    @*<span class="navbar-toggler-icon"></span>*@
+                    <img src="~/css/circle-chevron-down-solid.svg" width="30" height="24" />
                 </button>
+
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav flex-grow-1 justify-content-center nav-tabs ">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/About">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Students/Index">Students</a>
+                            @*<a class="nav-link text-dark" asp-area="" asp-page="/About">About</a>*@
+                            <a class="nav-link text-dark" asp-page="/About" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="About Page">About </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Courses/Index">Courses</a>
+                          @*  <a class="nav-link text-dark" asp-area="" asp-page="/Students/Index">Students</a>*@
+                            <a class="nav-link text-dark" asp-page="/Students/Index" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="StudentsPage">Students</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Instructors/Index">Instructors</a>
+                            @*<a class="nav-link text-dark" asp-area="" asp-page="/Courses/Index">Courses</a>*@
+                            <a class="nav-link text-dark" asp-page="/Courses/Index" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Courses Page">Courses</a>
                         </li>
-                                 <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Departments/Index">Departments</a>
+                        <li class="nav-item">
+                            @*<a class="nav-link text-dark" asp-area="" asp-page="/Instructors/Index">Instructors</a>*@
+                            <a class="nav-link text-dark" asp-page="/Instructors/Index" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Instructors Page">Instructors</a>
                         </li>
+
+                       <li class="nav-item">
+                           @* <a class="nav-link text-dark" asp-area="" asp-page="/Departments/Index">Departments</a>*@
+                            <a class="nav-link text-dark" asp-page="/Departments/Index" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Departments Page">Departments</a>
+                        </li>
+                   
                     </ul>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">The Team</button>
                 </div>
             </div>
         </nav>
     </header>
+
+
+
     <div class="container">
         <main role="main" class="pb-3">
+
+            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel" style= "overflow-y: auto;" >
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+
+
+                <div class="card-group">
+                          <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                               <div class="col-md-4">
+                                  <img src="~/css/groups/shye.jpg" class="img-fluid rounded-start" />
+                                 </div>
+
+
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="~/css/groups/shye.jpg" class="img-fluid rounded-start" />
+                            </div>
+
+
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                               <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                               <div class="col-md-4">
+                                  <img src="~/css/groups/shye.jpg" class="img-fluid rounded-start" />
+                                 </div>
+
+
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+
+                                 <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                               <div class="col-md-4">
+                                  <img src="~/css/groups/shye.jpg" class="img-fluid rounded-start" />
+                                 </div>
+
+
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - CENTRAL PHILLIPINE UNIVERSITY - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

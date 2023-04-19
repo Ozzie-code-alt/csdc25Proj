@@ -16,16 +16,16 @@
         <p>
             Find by name:
             <input type="text" name="SearchString" value="@Model.CurrentFilter" />
-            <input type="submit" value="Search" class="btn btn-primary" /> |
-            <a asp-page="./Index">Back to full List</a>
+            <input type="submit" value="Search" class="btn btn-outline-primary" /> |
+            <a class="btn btn-outline-secondary" asp-page="./Index">Back to full List</a>
         </p>
     </div>
 </form>
 
-
-<table class="table">
+<div class="container rounded" style="background-color:antiquewhite">
+<table class="table table-bordered rounded border-primary table-hover table-striped-columns">
     <thead>
-        <tr>
+        <tr class="table-warning">
             <th>
                 <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"
                    asp-route-currentFilter="@Model.CurrentFilter">
@@ -46,7 +46,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model.Students) {
-        <tr>
+            <tr class="table-danger">
             <td>
                 @Html.DisplayFor(modelItem => item.LastName)
             </td>
@@ -57,15 +57,37 @@
                 @Html.DisplayFor(modelItem => item.EnrollmentDate)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                   <button class="btn btn-outline-secondary" type="button">
+                        <a asp-page="./Edit" asp-route-id="@item.ID">
+                            <img src="~/css/pen.png" width="30" height="24" />
+                        </a>
+                    </button>
+
+
+                    <button class="btn btn-outline-info" type="button">
+                        <a asp-page="./Details" asp-route-id="@item.ID">
+                            <img src="~/css/resume.png" width="30" height="24"/>
+                        </a>
+                    </button>
+         
+
+                    <button class="btn btn-outline-danger" type="button">
+                        <a asp-page ="./Delete" asp-route-id="@item.ID">
+                            <img src="~/css/delete (1).png" width="30" height="24" />
+                        </a>
+                    </button>
+
+                   @* <a class="btn btn-outline-secondary" asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |*@
+                   @* <a class="btn btn-outline-info" asp-page="./Details" asp-route-id="@item.ID">Details</a> |*@
+                 @*   <a class="btn btn-outline-danger"  asp-page="./Delete" asp-route-id="@item.ID">Delete</a>*@
             </td>
         </tr>
 }
     </tbody>
-</table>
 
+
+</table>
+</div>
 @{
     var prevDisabled = !Model.Students.HasPreviousPage ? "disabled" : "";
     var nextDisabled = !Model.Students.HasNextPage ? "disabled" : "";
