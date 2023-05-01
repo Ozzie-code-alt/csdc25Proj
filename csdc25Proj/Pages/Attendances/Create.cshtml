@@ -1,0 +1,72 @@
+﻿@page
+@model csdc25Proj.Pages.Attendances.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Attendance</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Attendance.StudentName" class="control-label"></label>
+                <input asp-for="Attendance.StudentName" class="form-control" />
+                <span asp-validation-for="Attendance.StudentName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Attendance.isPresent" class="control-label"></label>
+                <input asp-for="Attendance.isPresent" class="form-control" />
+                <span asp-validation-for="Attendance.isPresent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Attendance.currDate" class="control-label"></label>
+                <input asp-for="Attendance.currDate" class="form-control" />
+                <span asp-validation-for="Attendance.currDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Student Names</button>
+                <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">List of Names</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        @*<p>Try scrolling the rest of the page to see this option in action.</p>*@
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var student in Model.Students)
+                                {
+                                    <tr>
+                                        <td>@student.LastName</td>
+                                        @*  <td><!-- your attendance status code here --></td>*@
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

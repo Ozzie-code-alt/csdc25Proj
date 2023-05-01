@@ -20,6 +20,7 @@ namespace csdc25Proj.Pages
 
         public IList<EnrollmentDateGroup> Students { get; set; }
 
+      
         public async Task OnGetAsync()
         {
             IQueryable<EnrollmentDateGroup> data =

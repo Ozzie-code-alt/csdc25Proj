@@ -37,6 +37,7 @@ namespace csdc25Proj.Models
         }
 
         public ICollection<Enrollment> Enrollments { get; set; }
+       
     }
 }
 

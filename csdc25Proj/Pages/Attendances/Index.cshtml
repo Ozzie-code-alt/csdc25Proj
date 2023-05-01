@@ -1,0 +1,78 @@
+﻿@page
+@model csdc25Proj.Pages.Attendances.IndexModel
+@using csdc25Proj.Pages.Students
+@{
+    ViewData["Title"] = "Attendance";
+}
+
+<h1>Student Attendance</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+    @*<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Student Names</button>*@
+</p>
+@*<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">List of Names</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    @*<p>Try scrolling the rest of the page to see this option in action.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var student in Model.Students)
+                {
+                    <tr>
+                        <td>@student.LastName</td>
+                      @*  <td><!-- your attendance status code here --></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+}
+  </div>
+</div>*@
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Attendance[0].StudentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Attendance[0].isPresent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Attendance[0].currDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Attendance) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isPresent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.currDate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

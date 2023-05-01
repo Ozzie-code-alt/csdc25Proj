@@ -17,7 +17,7 @@
                     <img asp-page="/Index" src="/css/goldenlion.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" /> <!-- Dont forget to fix this -->
                    GJLC
                 </a>
-    
+                    
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation" style="color:darkred" >
                     @*<span class="navbar-toggler-icon"></span>*@
@@ -29,7 +29,7 @@
                     <ul class="navbar-nav flex-grow-1 justify-content-center nav-tabs ">
                         <li class="nav-item">
                             @*<a class="nav-link text-dark" asp-area="" asp-page="/About">About</a>*@
-                            <a class="nav-link text-dark" asp-page="/About" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="About Page">About </a>
+                            <a class="nav-link text-dark" asp-page="/About" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="About Page">Statistics</a>
                         </li>
                         <li class="nav-item">
                           @*  <a class="nav-link text-dark" asp-area="" asp-page="/Students/Index">Students</a>*@
@@ -48,9 +48,13 @@
                            @* <a class="nav-link text-dark" asp-area="" asp-page="/Departments/Index">Departments</a>*@
                             <a class="nav-link text-dark" asp-page="/Departments/Index" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Departments Page">Departments</a>
                         </li>
-                   
+                        <li class="nav-item">
+                            @* <a class="nav-link text-dark" asp-area="" asp-page="/Departments/Index">Departments</a>*@
+                            <a class="nav-link text-dark" asp-page="/Attendances/Index" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Attendance Page">Attendance</a>
+                        </li>
                     </ul>
                     <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">The Team</button>
+
                 </div>
             </div>
         </nav>
@@ -63,23 +67,27 @@
 
             <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel" style= "overflow-y: auto;" >
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">GJLSC Members</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
 
 
-
                 <div class="card-group">
+
+
+                      <!--Caalem Card-->
                           <div class="card mb-3" style="max-width: 540px;">
                             <div class="row g-0">
                                <div class="col-md-4">
-                                  <img src="~/css/groups/shye.jpg" class="img-fluid rounded-start" />
+
+                                <img src="~/css/groups/gavin.jpg" class="img-fluid rounded-start"/>
+                                 @* <img src="~/css/groups/shye.jpg" class="img-fluid rounded-start" />*@
                                  </div>
 
-
+                           
                         <div class="col-md-8">
                           <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title">Gavin Matthew Caalem - Researcher / Developer</h5>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                           </div>
@@ -87,6 +95,8 @@
                       </div>
                       </div>
 
+
+                        <!--Custodio Card-->
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -96,7 +106,7 @@
 
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
+                                    <h5 class="card-title">Shye Kyra Custodio - Team lead/Manager</h5>
                                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                     <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                                 </div>
@@ -105,17 +115,18 @@
                     </div>
 
 
-
+                    <!--Llante Card-->
                                <div class="card mb-3" style="max-width: 540px;">
                             <div class="row g-0">
                                <div class="col-md-4">
-                                  <img src="~/css/groups/shye.jpg" class="img-fluid rounded-start" />
+                                <img src="~/css/groups/joshua.jpg" class="img-fluid rounded-start"/>
+                                 @* <img src="~/css/groups/shye.jpg" class="img-fluid rounded-start" />*@
                                  </div>
 
 
                         <div class="col-md-8">
                           <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title">Joshua Llante UI-UX Designer</h5>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                           </div>
@@ -123,16 +134,20 @@
                       </div>
                       </div>
 
+
+
+                    <!--Santos Card-->
                                  <div class="card mb-3" style="max-width: 540px;">
                             <div class="row g-0">
                                <div class="col-md-4">
-                                  <img src="~/css/groups/shye.jpg" class="img-fluid rounded-start" />
+                                <img src="~/css/groups/santos, justin r_0419.jpg " class="img-fluid rounded-start"/>
+                                  @*<img src="~/css/groups/shye.jpg" class="img-fluid rounded-start" />*@
                                  </div>
 
 
                         <div class="col-md-8">
                           <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title">Santos Justin - Developer Front and Back</h5>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                           </div>

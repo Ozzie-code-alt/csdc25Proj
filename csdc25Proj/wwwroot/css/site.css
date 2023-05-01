@@ -18,8 +18,8 @@ html {
 }
 
 body {
-    margin-bottom: 60px;
-    background-image: url('login.png');
+   /* margin-bottom: 60px;*/
+    background-image: url('background/lbackground.png');
     background-repeat: no-repeat;
     background-size: cover;
 }

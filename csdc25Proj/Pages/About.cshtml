@@ -7,7 +7,7 @@
 
 <h2>Student Body Statistics</h2>
 
-<table class="table table-bordered rounded border-primary table-hover table-striped-columns">
+@*<table class="table table-bordered rounded border-primary table-hover table-striped-columns">
     <tr>
         <th>
             Enrollment Date
@@ -28,4 +28,47 @@
                 </td>
             </tr>
     }
-</table>
+</table>*@
+
+<!-- Add the following code to display a chart -->
+<canvas id="myChart"></canvas>
+
+<canvas id="myCharts"></canvas>
+
+@section Scripts{
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Get the data from the model and create an array of labels and data
+        // student data
+        var enrollmentDates = @Html.Raw(Json.Serialize(Model.Students.Select(s => s.EnrollmentDate.ToString())));
+        var studentCounts = @Html.Raw(Json.Serialize(Model.Students.Select(s => s.StudentCount)));
+
+
+
+        // Create a new chart object and set the data and options
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: enrollmentDates,
+                datasets: [{
+                    label: 'Student Count',
+                    data: studentCounts,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+    </script>
+}
